@@ -27,11 +27,11 @@ class Var(object):
     OWNER_USERNAME = str(getenv('OWNER_USERNAME', '@kwic2002'))
     if 'DYNO' in environ:
         ON_HEROKU = True
-        APP_NAME = str(getenv('APP_NAME'))
+        APP_NAME = str(getenv('APP_NAME', 'kwicishere'))
     
     else:
         ON_HEROKU = False
-    FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME'kwicishere.herokuapp.com'
+    FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
     HAS_SSL=bool(getenv('HAS_SSL',False))
     if HAS_SSL:
         URL = "https://{}/".format(FQDN)
