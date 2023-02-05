@@ -70,7 +70,7 @@ async def private_receive_handler(c: Client, m: Message):
         DATE_LIST = FREE_USER.get(USER_ID)
         DAILY_LIMIT = DATE_LIST.get(today)
     if USER_ID not in Var.PREMIUM_USERS and DAILY_LIMIT == 1:
-        return await m.reply_text(f"<b>Hey {m.from_user.mention}, Wait for tommorow to use me, You have exceeded my free daily usage limit ! \n\nYou are a free user, if you need to get highspeed downloading links, you need to take premium subscription.\n\nPay ₹30/ per month - to the UPI ID sharundas123@ybl and send a screenshot to @kwicadmin in telegram.</b>")
+        return await m.reply_text(f"<b>Hey {m.from_user.mention}, Wait for tommorow to use me, You have exceeded my free daily usage limit ! \n\nYou are a free user, if you need to get highspeed downloading links, you need to take premium subscription.\n\nPay ₹30/ for Movies and ₹60/ for study materials (per month)- to the UPI ID sharundas123@ybl and send a screenshot to @kwicadmin in telegram.\n\nCash paid to they upi is non refundable😒</b>")
     if MY_PASS:
         check_pass = await pass_db.get_user_pass(m.chat.id)
         if check_pass== None:
